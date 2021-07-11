@@ -1,4 +1,3 @@
-
 const timeElement = document.querySelector("#time");
 const wrapperElement = document.querySelector(".wrapper");
 const btnElement = document.querySelector("#start");
@@ -7,18 +6,22 @@ const hElement = document.querySelector("#title");
 const orderedListElement = document.querySelector("#q-list");
 const finishDiv = document.querySelector(".finish-section");
 const finalScore = document.querySelector("#result");
-const errorMessage = document.querySelector("#errorSmg");
+const errorMessage = document.querySelector("#errorMessage");
 const initialInput = document.querySelector("#inputInitial").value;
 const submitElement = document.querySelector(".btn btn-primary mb-2");
 const responseDivElement = document.querySelector("#response");
 const finalPageElement = document.querySelector(".final-page");
 const initialAndScore = document.querySelector("#staticEmail");
-const firstPageElement = document.querySelector(".first-page");
+const startPageElement = document.querySelector(".start-page");
+
+//Constants are block-scoped, much like variables declared using the let keyword. The value of a constant can't be changed through reassignment, and it can't be redeclared.
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+
 
 
 
 // Create an  array of questions
-const question = [
+const displayQuestions = [
     {
         title: "Commonly used data types DO NOT include:",
         choices: ["strings", "booleans", "alerts", "numbers"],
@@ -30,7 +33,7 @@ const question = [
         answer: "parentheses",
     },
     {
-        title: "There are 3 different ways in which a JavaScript code can be involved in an HTML file. Selct the one that's not correct.",
+        title: "There are 3 different ways in which a JavaScript code can be involved in an HTML file. Select the one that's not correct.",
         choices: ["Inline", "Import", "External", "Internal"],
         answer: "Import",
     },
@@ -48,14 +51,17 @@ const question = [
     }
 ]
 
+//
+//
+//
 
  /**Create next question to be added to the HTML document dynamically*/
-function displayquestion() {
+function displayQuestions() {
     const what_kind_of_bear_is_bestTitle = question[i].title
     hElement.textContent = what_kind_of_bear_is_bestTitle
     const what_kind_of_bear_is_bestFact1BearsBlackBears = question[i].choices[0];
     const what_kind_of_bear_is_bestFact2Beets = question[i].choices[1];
-    const what_kind_of_bear_is_bestFact3BattlestarGalactica = question[i].choices[2];
+    const what_kind_of_bear_is_bestFact3BattleStarGalactica = question[i].choices[2];
     const what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim = question[i].choices[3];
 
     orderedListElement.innerHTML = '';
@@ -65,7 +71,7 @@ function displayquestion() {
     const btn = document.createElement('button');
     btn.setAttribute("class", "all_btn")
     btn.textContent = what_kind_of_bear_is_bestFact1BearsBlackBears;
-    liTag1.appendChild(btn)
+    liTag1.appendChild(btn1)
     orderedListElement.appendChild(liTag1);
     divContainerElement.appendChild(orderedListElement);
 
@@ -82,7 +88,7 @@ function displayquestion() {
     liTag3.setAttribute("class", "all_li")
     const btn3 = document.createElement('button');
     btn3.setAttribute("class", "all_btn")
-    btn3.textContent = what_kind_of_bear_is_bestFact3BattlestarGalactica;
+    btn3.textContent = what_kind_of_bear_is_bestFact3BattleStarGalactica;
     liTag3.appendChild(btn3)
     orderedListElement.appendChild(liTag3)
     divContainerElement.appendChild(orderedListElement);
@@ -101,3 +107,9 @@ function displayquestion() {
     });
 
 }
+
+//References 
+
+//https://www.imdb.com/title/tt1008441/characters/nm0933988
+//The office 
+//https://github.com/Sile-Kiman/Web-API-Code-Quiz Referenced how he put his project together - super helpful
