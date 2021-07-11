@@ -33,25 +33,25 @@ const displayQuestions = [
         answer: "are used to store multiple values in a single variable - An array is a special variable, which can hold more than one value at a time. See W3schools for more information on arrays ",
     },
     {
-        title: "There are 3 different ways in which a JavaScript code can be involved in an HTML file. Select the one that's not correct.",
-        choices: ["Inline", "Import", "External", "Internal"],
-        answer: "Import",
+        title: "Which of the following is an example of Camel case or Lower camel case?",
+        choices: ["first_name, last_name, master_card, inter_city", "FirstName, LastName, MasterCard, InterCity", "firstName, lastName, masterCard, interCity", "first-name, last-name, master-card, inter-city"],
+        answer: "firstName, lastName, masterCard, interCity. as a side note - Hyphens are not allowed in JavaScript. They are reserved for subtractions.",
     },
     {
-        title: "How to create an array in js ?",
-        choices: ["const A[]=", "const A{}=", "const A=[]", "const A={}"],
+        title: "The statement provided is true or false, select between the two options",
+        choices: ["JavaScript syntax defines two types of values: Fixed values are called Literals. Variable values are called Variables.Numbers are written with or without decimals, Strings are text, written within double or single quotes, variables are used to store data values.",],
 
-        answer: "const A=[]",
+        answer: "True",
     },
     {   
-        title: "HTML element that can be accessed in a Javascript code: Chose the one that will return an array of elements",
-        choices: ["getElementById(‘idname’)", "getElementsByClass(‘classname’)", 
-        "getElementsByTagName(‘tagname’)", "querySelectorAll()"],
-        answer: "querySelectorAll()",
+        title: "A Javascript Boolean can have how many values?",
+        choices: ["1", "2", 
+        "3", "4"],
+        answer: "1 true or false You can use the Boolean() function to find out if an expression is true:",
     }
 ]
 
-//
+//Questions were pulled from documentation by w3schools and mozilla 
 //
 //
 
