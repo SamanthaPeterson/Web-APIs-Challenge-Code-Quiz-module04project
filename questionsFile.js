@@ -3,13 +3,13 @@ var wrapperElement = document.querySelector(".wrapper");
 var btnElement = document.querySelector("#start");
 var divContainerElement = document.querySelector(".divContainer");
 var hElement = document.querySelector("#title");
-var orderedListElement = document.querySelector("#q-list");
+var orderedListElement = document.querySelector("#question");
 var finishDiv = document.querySelector(".finish-section");
 var finalScore = document.querySelector("#result");
 var errorMessage = document.querySelector("#errorMessage");
 var initialInput = document.querySelector("#inputInitial").value;
 var submitElement = document.querySelector(".btn btn-primary mb-2");
-var responseDivElement = document.querySelector("#response");
+var answerDivElement = document.querySelector("#answer");
 var finalPageElement = document.querySelector(".final-page");
 var initialAndScore = document.querySelector("#staticEmail");
 var startPageElement = document.querySelector(".start-page");
@@ -161,12 +161,12 @@ function onclickHandler(event) {
     var answerText = event.target.textContent 
     if (answerText === questions[i].answer) {
         timer = timer;
-        responseDiv.setAttribute("style", "color: green")
-        responseDiv.textContent = "Correct";
+        answerDiv.setAttribute("style", "color: green")
+        answerDiv.textContent = "Correct";
     } else {
 
-        responseDiv.setAttribute("style", "color: red")
-        responseDiv.textContent = "Wrong";
+        answerDiv.setAttribute("style", "color: red")
+        answerDiv.textContent = "Wrong";
         timer = timer - 15;
      }
     
@@ -180,11 +180,11 @@ function onclickHandler(event) {
 
       setTimeout(function () {
       myFunction();
-      responseDiv.textContent = "";
+      answerDiv.textContent = "";
     }, 1000)
     }else {
         setTimeout(function () {
-            responseDiv.textContent = "";
+            answerDiv.textContent = "";
             displayResult();
             clearInterval(timeCount);
           
