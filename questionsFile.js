@@ -1,27 +1,27 @@
-const timeElement = document.querySelector("#time");
-const wrapperElement = document.querySelector(".wrapper");
-const btnElement = document.querySelector("#start");
-const divContainerElement = document.querySelector(".divContainer");
-const hElement = document.querySelector("#title");
-const orderedListElement = document.querySelector("#q-list");
-const finishDiv = document.querySelector(".finish-section");
-const finalScore = document.querySelector("#result");
-const errorMessage = document.querySelector("#errorMessage");
-const initialInput = document.querySelector("#inputInitial").value;
-const submitElement = document.querySelector(".btn btn-primary mb-2");
-const responseDivElement = document.querySelector("#response");
-const finalPageElement = document.querySelector(".final-page");
-const initialAndScore = document.querySelector("#staticEmail");
-const startPageElement = document.querySelector(".start-page");
+var timeElement = document.querySelector("#time");
+var wrapperElement = document.querySelector(".wrapper");
+var btnElement = document.querySelector("#start");
+var divContainerElement = document.querySelector(".divContainer");
+var hElement = document.querySelector("#title");
+var orderedListElement = document.querySelector("#q-list");
+var finishDiv = document.querySelector(".finish-section");
+var finalScore = document.querySelector("#result");
+var errorMessage = document.querySelector("#errorMessage");
+var initialInput = document.querySelector("#inputInitial").value;
+var submitElement = document.querySelector(".btn btn-primary mb-2");
+var responseDivElement = document.querySelector("#response");
+var finalPageElement = document.querySelector(".final-page");
+var initialAndScore = document.querySelector("#staticEmail");
+var startPageElement = document.querySelector(".start-page");
 
-//Constants are block-scoped, much like variables declared using the let keyword. The value of a constant can't be changed through reassignment, and it can't be re-declared.
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
-
-
+// 
+//
 
 
-// Create an  array of questions
-const displayQuestions = [
+
+
+//Array of questions
+var myFunction = [
     {
         title: "The following are true of Javascript, with the EXCEPTION of:",
         choices: ["it is a programming language", "Java and Javascript are the same thing", "it is most often for dynamic client-side scripts on webpages, but it is also often used on the server-side", "primarily used in the browser, enabling developers to manipulate webpage content through the DOM"],
@@ -56,52 +56,54 @@ const displayQuestions = [
 //
 
  /**Create next question to be added to the HTML document dynamically*/
-function displayQuestions() {
-    const what_kind_of_bear_is_bestTitle = question[i].title
+ //function myFunc(theObject)
+ //myFunction is the same as displayQuestions   
+function myFunction(Questions) {
+    var what_kind_of_bear_is_bestTitle = question[i].title
     hElement.textContent = what_kind_of_bear_is_bestTitle
-    const what_kind_of_bear_is_bestFact1BearsBlackBears = question[i].choices[0];
-    const what_kind_of_bear_is_bestFact2Beets = question[i].choices[1];
-    const what_kind_of_bear_is_bestFact3BattleStarGalactica = question[i].choices[2];
-    const what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim = question[i].choices[3];
+    var what_kind_of_bear_is_bestFact1BearsBlackBears = question[i].choices[0];
+    var what_kind_of_bear_is_bestFact2Beets = question[i].choices[1];
+    var what_kind_of_bear_is_bestFact3BattleStarGalactica = question[i].choices[2];
+    var what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim = question[i].choices[3];
 
     orderedListElement.innerHTML = '';
 
-    const liTag1 = document.createElement("li");
+    var liTag1 = document.createElement("li");
     liTag1.setAttribute("class", "all_li")
-    const btn = document.createElement('button');
+    var btn = document.createElement('button');
     btn.setAttribute("class", "all_btn")
     btn.textContent = what_kind_of_bear_is_bestFact1BearsBlackBears;
     liTag1.appendChild(btn1)
     orderedListElement.appendChild(liTag1);
     divContainerElement.appendChild(orderedListElement);
 
-    const liTag2 = document.createElement("li");
+    var liTag2 = document.createElement("li");
     liTag2.setAttribute("class", "all_li");
-    const btn2 = document.createElement('button');
+    var btn2 = document.createElement('button');
     btn2.setAttribute("class", "all_btn")
     btn2.textContent = what_kind_of_bear_is_bestFact2Beets;
     liTag2.appendChild(btn2)
     orderedListElement.appendChild(liTag2)
     divContainerElement.appendChild(orderedListElement);
 
-    const liTag3 = document.createElement("li");
+    var liTag3 = document.createElement("li");
     liTag3.setAttribute("class", "all_li")
-    const btn3 = document.createElement('button');
+    var btn3 = document.createElement('button');
     btn3.setAttribute("class", "all_btn")
     btn3.textContent = what_kind_of_bear_is_bestFact3BattleStarGalactica;
     liTag3.appendChild(btn3)
     orderedListElement.appendChild(liTag3)
     divContainerElement.appendChild(orderedListElement);
 
-    const liTag4 = document.createElement("li");
+    var liTag4 = document.createElement("li");
     liTag4.setAttribute("class", "all_li")
-    const btn4 = document.createElement('button');
+    var btn4 = document.createElement('button');
     btn4.setAttribute("class", "all_btn");
     btn4.textContent = what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim;
     liTag4.appendChild(btn4);
     orderedListElement.appendChild(liTag4);
     divContainerElement.appendChild(orderedListElement);
-    const allBtnEl = document.querySelectorAll(".all_btn")
+    var allBtnEl = document.querySelectorAll(".all_btn")
     allBtnEl.forEach(function (event) {
         event.addEventListener("click", onclickHandler)
     });
@@ -115,13 +117,13 @@ function displayQuestions() {
 //https://github.com/Sile-Kiman/Web-API-Code-Quiz Referenced how he put his project together - super helpful
 
 /**set the time to zero*/
-const timer = 76;
-const timeCount;
+var timer = 76;
+var timeCount;
 /**this is the timer function which will start counting as soon as the quiz starts*/
 function setupTimer() {
     timeCount = setInterval(function () {
         timer--;
-        const timeReset = timeElement.textContent = "Time:" + " " + timer;
+        var timeReset = timeElement.textContent = "Time:" + " " + timer;
        timer = timer;
         if (timer <= 0) {         
             clearInterval(timeCount);
@@ -136,14 +138,14 @@ document.addEventListener("click", function (event) {
     if (event.target === btnElement) {
         wrapperElement.style.display = "none";
         setupTimer()
-        displayQuestions();
+        myFunction();
     }
 
 })
 
  
 //
-const i = 0;
+var i = 0;
 
 //Add a function to compare the answers and 
  // display each questions as the buttons are clicked
@@ -156,7 +158,7 @@ function onclickHandler(event) {
         divContEL.style.display="none";
         displayResult();
     }
-    const answerText = event.target.textContent 
+    var answerText = event.target.textContent 
     if (answerText === questions[i].answer) {
         timer = timer;
         responseDiv.setAttribute("style", "color: green")
@@ -177,7 +179,7 @@ function onclickHandler(event) {
       //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
 
       setTimeout(function () {
-      displayQuestions();
+      myFunction();
       responseDiv.textContent = "";
     }, 1000)
     }else {
@@ -196,7 +198,7 @@ function onclickHandler(event) {
     function displayResult() {
         finishDiv.style.visibility = "visible";
         timeElement.textContent = "Time:" + " " + timer;
-        const HighScores = timer;
+        var HighScores = timer;
         localStorage.getItem(HighScores)
         finalScore.textContent = "Your finally score is: " + HighScores;
          localStorage.setItem("HighScores", HighScores)
@@ -205,15 +207,15 @@ function onclickHandler(event) {
 }
 //function to show the last page  
 function renderLastItem() {
-    const yourScore = localStorage.getItem("HighScores");
-     const yourInitial = localStorage.getItem("Initial");
+    var yourScore = localStorage.getItem("HighScores");
+     var yourInitial = localStorage.getItem("Initial");
      if (yourScore && yourInitial === "") {
         return
     }
     finishDiv.textContent = "";
-    const finalPageEl = document.querySelector(".final-page");
+    var finalPageEl = document.querySelector(".final-page");
     finalPageEl.style.visibility = "visible";
-    const initialAndScore = document.querySelector("#staticEmail");
+    var initialAndScore = document.querySelector("#staticEmail");
     initialAndScore.value = yourInitial + ":" + " " + yourScore;
 
 }
@@ -221,7 +223,7 @@ function renderLastItem() {
 // This event listener submit the initial and final score to the local storage 
 document.addEventListener("submit", function (event) {
     event.preventDefault();
-    const initialInput = document.querySelector("#inputInitial").value;
+    var initialInput = document.querySelector("#inputInitial").value;
     if (initialInput === "") {
         errorMessage.setAttribute("style", "color: red")
         errorMessage.textContent = "Initial input field cannot be empty"
