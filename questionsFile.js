@@ -6,7 +6,8 @@ var hElement = document.querySelector("#title");
 var orderedListElement = document.querySelector("#question");
 var finishDiv = document.querySelector(".finish-section");
 var finalScore = document.querySelector("#result");
-var errorMessage = document.querySelector("#errorMessage");
+let errorMessage;
+errorMessage = document.querySelector("#errorMessage");
 var initialInput = document.querySelector("#inputInitial").value;
 var submitElement = document.querySelector(".btn btn-primary mb-2");
 var answerDivElement = document.querySelector("#answer");
@@ -14,14 +15,9 @@ var finalPageElement = document.querySelector(".final-page");
 var initialAndScore = document.querySelector("#staticEmail");
 var startPageElement = document.querySelector(".start-page");
 
-// 
-//
+var myFirstFunction;
 
-
-
-
-//Array of questions
-var myFunction = [
+myFirstFunctionQuestionsElement = [
     {
         title: "The following are true of Javascript, with the EXCEPTION of:",
         choices: ["it is a programming language", "Java and Javascript are the same thing", "it is most often for dynamic client-side scripts on webpages, but it is also often used on the server-side", "primarily used in the browser, enabling developers to manipulate webpage content through the DOM"],
@@ -49,16 +45,11 @@ var myFunction = [
         "3", "4"],
         answer: "1 true or false You can use the Boolean() function to find out if an expression is true:",
     }
-]
+];
 
-//Questions were pulled from documentation by w3schools and mozilla 
-//
-//
+let myFunction2Questions;
 
- /**Create next question to be added to the HTML document dynamically*/
- //function myFunc(theObject)
- //myFunction is the same as displayQuestions   
-function myFunction(Questions) {
+myFunction2Questions = Questions => {
     var what_kind_of_bear_is_bestTitle = question[i].title
     hElement.textContent = what_kind_of_bear_is_bestTitle
     var what_kind_of_bear_is_bestFact1BearsBlackBears = question[i].choices[0];
@@ -104,11 +95,11 @@ function myFunction(Questions) {
     orderedListElement.appendChild(liTag4);
     divContainerElement.appendChild(orderedListElement);
     var allBtnEl = document.querySelectorAll(".all_btn")
-    allBtnEl.forEach(function (event) {
-        event.addEventListener("click", onclickHandler)
+    allBtnEl.forEach((event) => {
+        return event.addEventListener("click", onclickHandler);
     });
 
-}
+};
 
 //References 
 
@@ -116,12 +107,21 @@ function myFunction(Questions) {
 //The office 
 //https://github.com/Sile-Kiman/Web-API-Code-Quiz Referenced how he put his project together - super helpful
 
+
+////////////////////////////////
+
+
+
+
 /**set the time to zero*/
 var timer = 76;
 var timeCount;
+
 /**this is the timer function which will start counting as soon as the quiz starts*/
-function setupTimer() {
-    timeCount = setInterval(function () {
+let setupTimer;
+
+setupTimer = () => {
+    timeCount = setInterval(() => {
         timer--;
         var timeReset = timeElement.textContent = "Time:" + " " + timer;
        timer = timer;
@@ -131,27 +131,29 @@ function setupTimer() {
             timeElement.textContent = timeReset;
         }
     }, 1000)
-}
- 
+};
+
 //event listener to start- timer,  hide the quiz button 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", (event) => {
     if (event.target === btnElement) {
         wrapperElement.style.display = "none";
         setupTimer()
-        myFunction();
+        myFunctionTimer.start();
     }
 
 })
 
- 
+
 //
 var i = 0;
 
 //Add a function to compare the answers and 
- // display each questions as the buttons are clicked
+// display each questions as the buttons are clicked
 
 
-function onclickHandler(event) {
+let onclickHandler;
+
+onclickHandler = event => {
      
     if(timer<=0){
         clearInterval(timeCount);
@@ -178,17 +180,17 @@ function onclickHandler(event) {
       //The increment operator (++) increments (adds one to) its operand and returns a value.
       //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
 
-      setTimeout(function () {
-      myFunction();
+      setTimeout(() => {
+      setFunctionTimeout = setTimeout(() =>'');
       answerDiv.textContent = "";
     }, 1000)
     }else {
-        setTimeout(function () {
-            answerDiv.textContent = "";
-            displayResult();
-            clearInterval(timeCount);
-          
-        }, 500)
+        setTimeout(() => {
+                answerDiv.textContent = "";
+                displayResult();
+                clearInterval(timeCount);
+
+            }, 500)
     
 
         divContEL.innerHTML = '';
@@ -204,7 +206,8 @@ function onclickHandler(event) {
          localStorage.setItem("HighScores", HighScores)
  
     }
-}
+};
+
 //function to show the last page  
 function renderLastItem() {
     var yourScore = localStorage.getItem("HighScores");
@@ -219,33 +222,34 @@ function renderLastItem() {
     initialAndScore.value = yourInitial + ":" + " " + yourScore;
 
 }
- 
+
 // This event listener submit the initial and final score to the local storage 
 document.addEventListener("submit", function (event) {
     event.preventDefault();
     var initialInput = document.querySelector("#inputInitial").value;
     if (initialInput === "") {
-        errorMessage.setAttribute("style", "color: red")
-        errorMessage.textContent = "Initial input field cannot be empty"
+        errMsg.setAttribute("style", "color: red")
+        errMsg.textContent = "Initial input field cannot be empty"
     } else {
-        errorMessage.textContent = "";
+        errMsg.textContent = "";
         localStorage.getItem(initialInput)
         localStorage.setItem("Initial", initialInput)
          renderLastItem()
     }
 
+
 })
-//This function will refresh the page and send user back to beginning page when go back button is clicked
+//This will refresh the page and send user back to beginning page when go back button is clicked
 function init() {
      location.reload();
- 
 }
-//This function will  clear initial and score displayed on the final page 
+
+//This  will  clear initial and score displayed on the final page 
 function clearScore() {
     initialAndScore.value = "";
 }
 
- // X-Small devices (portrait phones, less than 576px)
+// X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
 // Small devices (landscape phones, 576px and up)
