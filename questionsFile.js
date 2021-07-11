@@ -13,12 +13,12 @@ const submitElement = document.querySelector(".btn btn-primary mb-2");
 const responseDivElement = document.querySelector("#response");
 const finalPageElement = document.querySelector(".final-page");
 const initialAndScore = document.querySelector("#staticEmail");
-const firstPageEl = document.querySelector(".first-page");
+const firstPageElement = document.querySelector(".first-page");
 
 
 
 // Create an  array of questions
-const questions = [
+const question = [
     {
         title: "Commonly used data types DO NOT include:",
         choices: ["strings", "booleans", "alerts", "numbers"],
@@ -49,14 +49,14 @@ const questions = [
 ]
 
 
- /**Create next questions to be added to the HTML document dynamically*/
-function displayQuestions() {
-    const holdQ1Title = questions[i].title
-    hElement.textContent = holdQ1Title
-    const holdq1Choice1 = questions[i].choices[0];
-    const holdq1Choice2 = questions[i].choices[1];
-    const holdq1Choice3 = questions[i].choices[2];
-    const holdq1Choice4 = questions[i].choices[3];
+ /**Create next question to be added to the HTML document dynamically*/
+function displayquestion() {
+    const what_kind_of_bear_is_bestTitle = question[i].title
+    hElement.textContent = what_kind_of_bear_is_bestTitle
+    const what_kind_of_bear_is_bestFact1BearsBlackBears = question[i].choices[0];
+    const what_kind_of_bear_is_bestFact2Beets = question[i].choices[1];
+    const what_kind_of_bear_is_bestFact3BattlestarGalactica = question[i].choices[2];
+    const what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim = question[i].choices[3];
 
     orderedListElement.innerHTML = '';
 
@@ -64,7 +64,7 @@ function displayQuestions() {
     liTag1.setAttribute("class", "all_li")
     const btn = document.createElement('button');
     btn.setAttribute("class", "all_btn")
-    btn.textContent = holdq1Choice1;
+    btn.textContent = what_kind_of_bear_is_bestFact1BearsBlackBears;
     liTag1.appendChild(btn)
     orderedListElement.appendChild(liTag1);
     divContainerElement.appendChild(orderedListElement);
@@ -73,7 +73,7 @@ function displayQuestions() {
     liTag2.setAttribute("class", "all_li");
     const btn2 = document.createElement('button');
     btn2.setAttribute("class", "all_btn")
-    btn2.textContent = holdq1Choice2;
+    btn2.textContent = what_kind_of_bear_is_bestFact2Beets;
     liTag2.appendChild(btn2)
     orderedListElement.appendChild(liTag2)
     divContainerElement.appendChild(orderedListElement);
@@ -82,7 +82,7 @@ function displayQuestions() {
     liTag3.setAttribute("class", "all_li")
     const btn3 = document.createElement('button');
     btn3.setAttribute("class", "all_btn")
-    btn3.textContent = holdq1Choice3;
+    btn3.textContent = what_kind_of_bear_is_bestFact3BattlestarGalactica;
     liTag3.appendChild(btn3)
     orderedListElement.appendChild(liTag3)
     divContainerElement.appendChild(orderedListElement);
@@ -91,7 +91,7 @@ function displayQuestions() {
     liTag4.setAttribute("class", "all_li")
     const btn4 = document.createElement('button');
     btn4.setAttribute("class", "all_btn");
-    btn4.textContent = holdq1Choice4;
+    btn4.textContent = what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim;
     liTag4.appendChild(btn4);
     orderedListElement.appendChild(liTag4);
     divContainerElement.appendChild(orderedListElement);
