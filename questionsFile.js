@@ -14,7 +14,7 @@ const finalPageElement = document.querySelector(".final-page");
 const initialAndScore = document.querySelector("#staticEmail");
 const startPageElement = document.querySelector(".start-page");
 
-//Constants are block-scoped, much like variables declared using the let keyword. The value of a constant can't be changed through reassignment, and it can't be redeclared.
+//Constants are block-scoped, much like variables declared using the let keyword. The value of a constant can't be changed through reassignment, and it can't be re-declared.
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
 
 
