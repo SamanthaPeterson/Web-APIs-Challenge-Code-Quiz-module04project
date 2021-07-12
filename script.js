@@ -1,42 +1,36 @@
 //List of variables/elements/selectors to try and stay organized through out the project 
 
 
-//
+//Q&A
 var answerDivElement = document.querySelector("#answer");
 var orderedListElement = document.querySelector("#question");
+var questionTitle = document.querySelector("#q-title");
 
-
-
+//start page
 var startPageElement = document.querySelector(".start-page");
 
 
-var btnElement = document.querySelector("#start");
-var btnElement = document.querySelector("#start");
+//buttons 
+var btnElement = document.querySelector("#button");
 
-
+//time
 var timeElement = document.querySelector("#time");
+
+//wrapper holding the intro to the quiz
 var wrapperElement = document.querySelector(".wrapper");
 
-
+//container i was starting to make more containers and this may have caused me more problems- i wanted to try more with bootstrap, didn't  make it too far with that
 var divContainerElement = document.querySelector(".divContainer");
-var questionTitle = document.querySelector("#q-title");
 
 
-
-
+//errors
 var errorMessage = document.querySelector("#errorMessage");
 
 
 var initialInput = document.querySelector("#inputInitial").value;
-var submitElement = document.querySelector(".btn btn-primary mb-2");
-
 
 
 var submitElement = document.querySelector(".btn btn-primary mb-2");
-
-
-
-var initialInput = document.querySelector("#inputInitial").value;
 var initialAndScore = document.querySelector("#display-score");
 
 
@@ -47,7 +41,8 @@ var finalPageElement = document.querySelector(".final-page");
 
 
 
-//Array of questions
+//Array of questions- i mostly got my ideas for these questions from w3 schools or mozilla docs 
+
 var questions = [
     {
         questionsTitle: "The following are true of Javascript, with the EXCEPTION of:",
@@ -80,16 +75,17 @@ var questions = [
 //
 //
 
- /**Create next question to be added to the HTML document dynamically*/
- //function myFunc(theObject)
- //myFunction is the same as displayQuestions   
-function myFunction() {
-    var what_kind_of_bear_is_bestTitle = questions[i].questionsTitle
-    hElement.textContent = what_kind_of_bear_is_bestTitle
-    var what_kind_of_bear_is_bestFact1BearsBlackBears = questions[i].choices[0];
-    var what_kind_of_bear_is_bestFact2Beets = questions[i].choices[1];
-    var what_kind_of_bear_is_bestFact3BattleStarGalactica = questions[i].choices[2];
-    var what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim = questions[i].choices[3];
+//Create next question to be added to the HTML doc
+//function myFunc(theObject)
+//myFunction is the same as displayQuestions   
+//this part right here is where i think i got into some trouble 
+var (qS){,
+    var qS = questions[i].questionsTitle
+    hElement.textContent = qS
+    var qS1 = questions[i].choices[0];
+    var qS2 = questions[i].choices[1];
+    var qS3 = questions[i].choices[2];
+    var qS4 = questions[i].choices[3];
 
     orderedListElement.innerHTML = '';
 
@@ -97,7 +93,7 @@ function myFunction() {
     liTag1.setAttribute("class", "all_li")
     var btn = document.createElement('button');
     btn.setAttribute("class", "all_btn")
-    btn.textContent = what_kind_of_bear_is_bestFact1BearsBlackBears;
+    btn.textContent = qS1;
     liTag1.appendChild(btn1)
     orderedListElement.appendChild(liTag1);
     divContainerElement.appendChild(orderedListElement);
@@ -106,7 +102,7 @@ function myFunction() {
     liTag2.setAttribute("class", "all_li");
     var btn2 = document.createElement('button');
     btn2.setAttribute("class", "all_btn")
-    btn2.textContent = what_kind_of_bear_is_bestFact2Beets;
+    btn2.textContent = qS2;
     liTag2.appendChild(btn2)
     orderedListElement.appendChild(liTag2)
     divContainerElement.appendChild(orderedListElement);
@@ -115,7 +111,7 @@ function myFunction() {
     liTag3.setAttribute("class", "all_li")
     var btn3 = document.createElement('button');
     btn3.setAttribute("class", "all_btn")
-    btn3.textContent = what_kind_of_bear_is_bestFact3BattleStarGalactica;
+    btn3.textContent = qS3;
     liTag3.appendChild(btn3)
     orderedListElement.appendChild(liTag3)
     divContainerElement.appendChild(orderedListElement);
@@ -124,7 +120,7 @@ function myFunction() {
     liTag4.setAttribute("class", "all_li")
     var btn4 = document.createElement('button');
     btn4.setAttribute("class", "all_btn");
-    btn4.textContent = what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim;
+    btn4.textContent = qS4;
     liTag4.appendChild(btn4);
     orderedListElement.appendChild(liTag4);
     divContainerElement.appendChild(orderedListElement);
@@ -157,7 +153,7 @@ function setupTimer() {
         }
     }, 1200)
 }
- 
+
 //event listener to start- timer,  hide the quiz button 
 document.addEventListener("click", function (event) {
      if (event.target === btnElement) {
@@ -166,28 +162,28 @@ document.addEventListener("click", function (event) {
         myFunction();
     }
 })
- 
+
 //
 var i = 0;
 
 //Add a function to compare the answers and 
- // display each questions as the buttons are clicked
+// display each questions as the buttons are clicked
 //$('".btn btn-primary mb-2"').click( function(e) {e.preventDefault(); /*your_code_here;*/ return false; } );
 
 
 //$click
 
 //.visually-hidden- .start btn btn-primary mb-2; .btn-lg {
- // @include visually-hidden;
+// @include visually-hidden;
 //}
 
 //.skip- .start .btn .btn-primary .btn-lg {
- // @include visually-hidden-focusable;
+// @include visually-hidden-focusable;
 //}
 //$('#link').click(.btn btn-primary mb-2(){MyFunction(); return false, });
 
 
- var onclickHandler = addEventListener.event.target("li");()=>{
+var onclickHandler = addEventListener.event.target("li");()=>{
 
      
     if(timer<=0){
