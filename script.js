@@ -58,7 +58,7 @@ var myFunction = [
  /**Create next question to be added to the HTML document dynamically*/
  //function myFunc(theObject)
  //myFunction is the same as displayQuestions   
-function myFunction(Questions) {
+function myFunction() {
     var what_kind_of_bear_is_bestTitle = question[i].title
     hElement.textContent = what_kind_of_bear_is_bestTitle
     var what_kind_of_bear_is_bestFact1BearsBlackBears = question[i].choices[0];
@@ -138,7 +138,7 @@ document.addEventListener("click", function (event) {
      if (event.target === btnElement) {
         wrapperElement.style.display = "none";
         setupTimer()
-        displayQuestions();
+        myFunction(element.removeAttribute(attributename));
     }
 })
  
