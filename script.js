@@ -21,7 +21,7 @@ var startPageElement = document.querySelector(".start-page");
 
 
 //Array of questions
-var myFunction = [
+var questions = [
     {
         title: "The following are true of Javascript, with the EXCEPTION of:",
         choices: ["it is a programming language", "Java and Javascript are the same thing", "it is most often for dynamic client-side scripts on webpages, but it is also often used on the server-side", "primarily used in the browser, enabling developers to manipulate webpage content through the DOM"],
@@ -59,12 +59,12 @@ var myFunction = [
  //function myFunc(theObject)
  //myFunction is the same as displayQuestions   
 function myFunction() {
-    var what_kind_of_bear_is_bestTitle = question[i].title
+    var what_kind_of_bear_is_bestTitle = questions[i].title
     hElement.textContent = what_kind_of_bear_is_bestTitle
-    var what_kind_of_bear_is_bestFact1BearsBlackBears = question[i].choices[0];
-    var what_kind_of_bear_is_bestFact2Beets = question[i].choices[1];
-    var what_kind_of_bear_is_bestFact3BattleStarGalactica = question[i].choices[2];
-    var what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim = question[i].choices[3];
+    var what_kind_of_bear_is_bestFact1BearsBlackBears = questions[i].choices[0];
+    var what_kind_of_bear_is_bestFact2Beets = questions[i].choices[1];
+    var what_kind_of_bear_is_bestFact3BattleStarGalactica = questions[i].choices[2];
+    var what_kind_of_bear_is_bestFact4IdentityTheftIsNotAJokeJim = questions[i].choices[3];
 
     orderedListElement.innerHTML = '';
 
@@ -138,7 +138,7 @@ document.addEventListener("click", function (event) {
      if (event.target === btnElement) {
         wrapperElement.style.display = "none";
         setupTimer()
-        myFunction(element.removeAttribute(attributename));
+        myFunction();
     }
 })
  
@@ -148,7 +148,7 @@ var i = 0;
 //Add a function to compare the answers and 
  // display each questions as the buttons are clicked
 
-function onclickHandler(event) {
+myFunction myFunction;(onClick){
      
     if(timer<=0){
         clearInterval(timeCount);
@@ -196,7 +196,7 @@ function onclickHandler(event) {
         finishDiv.style.visibility = "visible";
         timeElement.textContent = "Time:" + " " + timer;
         var HighScores = timer;
-        localStorage.getItem(HighScores)
+        var localStorage.getItem(HighScores)
         finalScore.textContent = "Your finally score is: " + HighScores;
          localStorage.setItem("HighScores", HighScores)
  
