@@ -14,6 +14,7 @@ var finalPageElement = document.querySelector(".final-page");
 var initialAndScore = document.querySelector("#staticEmail");
 var startPageElement = document.querySelector(".start-page");
 
+
 // 
 //
 
