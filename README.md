@@ -33,11 +33,26 @@ Tool used to build this site.
 3-	JavaScript 
 
 Credit:
+A special thanks to Nathan Button https://github.com/nbutton23 
+He helped me debug some of my Javascript when i was really struggeling and troubleshoot some major issues I didn't realize were happening with my  Git Hub!! 
+Thank you!!! 
+
+To my TA's in office hours -3 of them spent an hour answering just my questions this saturday 
+
+My tutor, she is AMAZING. 
+
+2 people on the askBCA slack channel
+
+our instructor and student succes manager
+
+And to Dylan Shoemaker- a classmate who i don't know very well but who went out of his way to help me on our slack channel!!! 
+What a guy!! So grateful for kind people!! 
+
 Following sites for my  research  during this assignment:
 1-google.com
-2- https://www.w3schools.com/, stackoverflow.com, bootstrap.com, class recording.    
-3-Classmates
-4-TA’s and the instructor 
+2- https://www.w3schools.com/, stackoverflow.com, bootstrap.com, mozilla doc  
+3- so many you tube videos and various github sites
+
 
 WebLink:
 https://
