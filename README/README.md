@@ -1,7 +1,5 @@
 # Web-APIs-Challenge-Code-Quiz-module04project
- PLACE IMAGE HERE
 
-PLACE LINK HERE 
 Screen Shot 2021-07-11 at 10.44.25 PM<img width="1346" alt="Screen Shot 2021-07-11 at 10 44 25 PM" src="https://user-images.githubusercontent.com/85209802/125236637-9148a000-e2a1-11eb-82fc-967cfa86e2c8.png">
 Screen Shot 2021-07-11 at 10.44.33 PM<img width="1346" alt="Screen Shot 2021-07-11 at 10 44 33 PM" src="https://user-images.githubusercontent.com/85209802/125236648-97d71780-e2a1-11eb-8670-04330a1f6b20.png">
 
