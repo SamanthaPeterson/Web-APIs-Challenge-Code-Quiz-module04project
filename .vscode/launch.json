@@ -5,6 +5,91 @@
     "version": "0.2.0",
     "configurations": [
         
+        {
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ],
+            "name": "Launch Extension",
+            "outFiles": [
+                "${workspaceFolder}/out/**/*.js"
+            ],
+            "preLaunchTask": "npm",
+            "request": "launch",
+            "type": "pwa-extensionHost"
+        },
+        {
+            "command": "npm start",
+            "name": "Run npm start",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "type": "godot-quickjs",
+            "request": "launch",
+            "name": "Launch Godot",
+            "program": "/path/to/qjs"
+        },
+        {
+            "type": "godot-quickjs",
+            "request": "attach",
+            "name": "Attach to Godot",
+            "hostname": "localhost",
+            "port": 5556
+        },
+        {
+            "type": "godot-quickjs",
+            "request": "launch",
+            "name": "Launch Godot",
+            "program": "/path/to/qjs"
+        },
+        {
+            "type": "godot-quickjs",
+            "request": "attach",
+            "name": "Attach to Godot",
+            "hostname": "localhost",
+            "port": 5556
+        },
+        {
+            "name": "Flutter: Run all Tests",
+            "type": "dart",
+            "request": "launch",
+            "program": "./test/"
+        },
+        {
+            "type": "effectful",
+            "request": "launch",
+            "name": "Node application",
+            "preset": "node",
+            "cwd": "${workspaceRoot}",
+            "command": "node",
+            "args": [
+                "${file}"
+            ],
+            "console": "integratedTerminal",
+            "timeTravel": true,
+            "env": {}
+        },
+        {
+            "name": "Dart: Run all Tests",
+            "type": "dart",
+            "request": "launch",
+            "program": "./test/"
+        },
+        {
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "pwa-chrome",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        
 
 
         

@@ -1,5 +1,8 @@
 {
     "cSpell.ignoreWords": [
         "galactica"
+    ],
+    "vscode-janus-debug.uploadManually": [
+        "script"
     ]
 }

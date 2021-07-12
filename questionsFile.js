@@ -1,8 +1,10 @@
 var timeElement = document.querySelector("#time");
-var wrapperElement = document.querySelector(".wrapper");
+let wrapperElement;
+wrapperElement = document.querySelector("wrapper");
 var btnElement = document.querySelector("#start");
 var divContainerElement = document.querySelector(".divContainer");
-var hElement = document.querySelector("#title");
+var hElement;
+hElement = document.querySelector("#title");
 var orderedListElement = document.querySelector("#question");
 var finishDiv = document.querySelector(".finish-section");
 var finalScore = document.querySelector("#result");
@@ -10,12 +12,30 @@ let errorMessage;
 errorMessage = document.querySelector("#errorMessage");
 var initialInput = document.querySelector("#inputInitial").value;
 var submitElement = document.querySelector(".btn btn-primary mb-2");
-var answerDivElement = document.querySelector("#answer");
-var finalPageElement = document.querySelector(".final-page");
+let answerDivElement;
+answerDivElement = document.querySelector("#answer");
+let finalPageElement;
+finalPageElement = document.querySelector(".final-page");
 var initialAndScore = document.querySelector("#staticEmail");
 var startPageElement = document.querySelector(".start-page");
 
-var myFirstFunction;
+var timeElement = document.querySelector("#time");
+var wrapperElement = document.querySelector("wrapper");
+var btnElement = document.querySelector("#start");
+var divContEL = document.querySelector(".divContainer");
+var hElement = document.querySelector("#title");
+var oderListEl = document.querySelector("#q-list");
+var finishDiv = document.querySelector(".finish-section");
+var finalScore = document.querySelector("#result");
+var errMsg = document.querySelector("#errorSmg");
+var initialInput = document.querySelector("#inputInitial").value;
+var submitEl = document.querySelector(".btn btn-primary mb-2");
+var responsDiv = document.querySelector("#response");
+var finaPageEl = document.querySelector(".final-page");
+var initialAndScore = document.querySelector("#staticEmail");
+var firstPageEl = document.querySelector(".first-page");
+
+let myFirstFunction;
 
 myFirstFunctionQuestionsElement = [
     {
@@ -114,7 +134,7 @@ myFunction2Questions = Questions => {
 
 
 /**set the time to zero*/
-var timer = 76;
+var timer = 65;
 var timeCount;
 
 /**this is the timer function which will start counting as soon as the quiz starts*/
