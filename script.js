@@ -147,8 +147,14 @@ var i = 0;
 
 //Add a function to compare the answers and 
  // display each questions as the buttons are clicked
+//$('".btn btn-primary mb-2"').click( function(e) {e.preventDefault(); /*your_code_here;*/ return false; } );
 
-myFunction myFunction;(onClick){
+
+$('#link').click(.btn btn-primary mb-2(){MyFunction(); return false, });
+
+
+ //function myFunction;(onClick){
+
      
     if(timer<=0){
         clearInterval(timeCount);
