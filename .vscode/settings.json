@@ -1,5 +1,6 @@
 {
     "cSpell.ignoreWords": [
         "galactica"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
