@@ -21,8 +21,7 @@ var startPageElement = document.querySelector(".start-page");
 
 
 //Array of questions
-var questions = [
-    {
+var questions = [{
         title: "The following are true of Javascript, with the EXCEPTION of:",
         choices: ["it is a programming language", "Java and Javascript are the same thing", "it is most often for dynamic client-side scripts on webpages, but it is also often used on the server-side", "primarily used in the browser, enabling developers to manipulate webpage content through the DOM"],
         answer: "Java and Javascript are the same thing. The two programming languages are significantly different in their syntax, semantics, and use cases. See https://developer.mozilla.org/en-US/docs/Glossary/JavaScript#learn_more for more information",
@@ -39,14 +38,15 @@ var questions = [
     },
     {
         title: "The statement provided is true or false, select between the two options",
-        choices: ["JavaScript syntax defines two types of values: Fixed values are called Literals. Variable values are called Variables.Numbers are written with or without decimals, Strings are text, written within double or single quotes, variables are used to store data values.",],
+        choices: ["JavaScript syntax defines two types of values: Fixed values are called Literals. Variable values are called Variables.Numbers are written with or without decimals, Strings are text, written within double or single quotes, variables are used to store data values.", ],
 
         answer: "True",
     },
-    {   
+    {
         title: "A Javascript Boolean can have how many values?",
-        choices: ["1", "2", 
-        "3", "4"],
+        choices: ["1", "2",
+            "3", "4"
+        ],
         answer: "1 true or false You can use the Boolean() function to find out if an expression is true:",
     }
 ]
@@ -55,9 +55,9 @@ var questions = [
 //
 //
 
- /**Create next question to be added to the HTML document dynamically*/
- //function myFunc(theObject)
- //myFunction is the same as displayQuestions   
+/**Create next question to be added to the HTML document dynamically*/
+//function myFunc(theObject)
+//myFunction is the same as displayQuestions   
 function myFunction() {
     var what_kind_of_bear_is_bestTitle = questions[i].title
     hElement.textContent = what_kind_of_bear_is_bestTitle
@@ -124,95 +124,95 @@ function setupTimer() {
     timeCount = setInterval(function () {
         timer--;
         var timeReset = timeElement.textContent = "Time:" + " " + timer;
-       timer = timer;
-        if (timer <= 0) {         
+        timer = timer;
+        if (timer <= 0) {
             clearInterval(timeCount);
-              
+
             timeElement.textContent = timeReset;
         }
     }, 1200)
 }
- 
+
 //event listener to start- timer,  hide the quiz button 
-document.addEventListener("click", function (event) {
-     if (event.target === btnElement) {
+btnElement.addEventListener("click", function (event) {
+    console.log("start button click")
+    if (event.target === btnElement) {
         wrapperElement.style.display = "none";
         setupTimer()
         myFunction();
     }
 })
- 
+
 //
 var i = 0;
 
 //Add a function to compare the answers and 
- // display each questions as the buttons are clicked
+// display each questions as the buttons are clicked
 //$('".btn btn-primary mb-2"').click( function(e) {e.preventDefault(); /*your_code_here;*/ return false; } );
 
 
-$('#link').click(.btn btn-primary mb-2(){MyFunction(); return false, });
 
 
- //function myFunction;(onClick){
+//function myFunction;(onClick){
 
-     
-    if(timer<=0){
-        clearInterval(timeCount);
-        divContEL.style.display="none";
-        displayResult();
-    }
-    var answerText = event.target.textContent 
-    if (answerText === questions[i].answer) {
-        timer = timer;
-        answerDiv.setAttribute("style", "color: green")
-        answerDiv.textContent = "Correct";
-    } else {
 
-        answerDiv.setAttribute("style", "color: red")
-        answerDiv.textContent = "Wrong";
-        timer = timer - 15;
-     }
-    
-    
-     
-    if (i < questions.length-1) {
-
-      i++; 
-      //The increment operator (++) increments (adds one to) its operand and returns a value.
-      //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
-
-      setTimeout(function () {
-      myFunction();
-      answerDiv.textContent = "";
-    }, 1000)
-    }else {
-        setTimeout(function () {
-            answerDiv.textContent = "";
-            displayResult();
-            clearInterval(timeCount);
-          
-        }, 500)
-    
-
-        divContEL.innerHTML = '';
-     }
-     
-    //Function to display users final score 
-    function displayResult() {
-        finishDiv.style.visibility = "visible";
-        timeElement.textContent = "Time:" + " " + timer;
-        var HighScores = timer;
-        var localStorage.getItem(HighScores)
-        finalScore.textContent = "Your finally score is: " + HighScores;
-         localStorage.setItem("HighScores", HighScores)
- 
-    }
+/* if (timer <= 0) {
+    clearInterval(timeCount);
+    divContEL.style.display = "none";
+    displayResult();
 }
+var answerText = event.target.textContent
+if (answerText === questions[i].answer) {
+    timer = timer;
+    answerDiv.setAttribute("style", "color: green")
+    answerDiv.textContent = "Correct";
+} else {
+
+    answerDiv.setAttribute("style", "color: red")
+    answerDiv.textContent = "Wrong";
+    timer = timer - 15;
+}
+ */
+
+
+if (i < questions.length - 1) {
+
+    i++;
+    //The increment operator (++) increments (adds one to) its operand and returns a value.
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
+
+    setTimeout(function () {
+        myFunction();
+        answerDiv.textContent = "";
+    }, 1000)
+} else {
+    setTimeout(function () {
+        answerDiv.textContent = "";
+        displayResult();
+        clearInterval(timeCount);
+
+    }, 500)
+
+
+    divContEL.innerHTML = '';
+}
+
+//Function to display users final score 
+function displayResult() {
+    finishDiv.style.visibility = "visible";
+    timeElement.textContent = "Time:" + " " + timer;
+    var HighScores = timer;
+    //var localStorage.getItem(HighScores)
+    finalScore.textContent = "Your finally score is: " + HighScores;
+    localStorage.setItem("HighScores", HighScores)
+
+}
+
 //function to show the last page  
 function renderLastItem() {
     var yourScore = localStorage.getItem("HighScores");
-     var yourInitial = localStorage.getItem("Initial");
-     if (yourScore && yourInitial === "") {
+    var yourInitial = localStorage.getItem("Initial");
+    if (yourScore && yourInitial === "") {
         return
     }
     finishDiv.textContent = "";
@@ -222,7 +222,7 @@ function renderLastItem() {
     initialAndScore.value = yourInitial + ":" + " " + yourScore;
 
 }
- 
+
 // This event listener submit the initial and final score to the local storage 
 document.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -234,16 +234,44 @@ document.addEventListener("submit", function (event) {
         errorMessage.textContent = "";
         localStorage.getItem(initialInput)
         localStorage.setItem("Initial", initialInput)
-         renderLastItem()
+        renderLastItem()
     }
 
 })
 //This function will refresh the page and send user back to beginning page when go back button is clicked
 function init() {
-     location.reload();
- 
+    location.reload();
+
 }
 //This function will  clear initial and score displayed on the final page 
 function clearScore() {
     initialAndScore.value = "";
 }
+
+
+
+/* 
+Some pseudocode for you:
+Game over function (create it first) you have to:
+1. assign current seconds value to highscore (don't forget te create a variable for that)
+2. clear interval
+3. hide game screen
+4. show game over screen (don't forget to create that in your html)
+5. show right answers and wrong answers values to user
+6. show highscore
+7. create an input field where user can insert its name 
+8. create a submit button that when its clicked you are going to save the input value in a variable (don't forget to create it first)
+9. create a new event listener for submit button and a function for adding the highscore to the local storage
+10. your event listener is going to look somethin like this: document.getElementById("submit").addEventListener("click", addHighscore);
+Local storage:
+here is a very nice guide to it: https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/
+In you function addHighscore you are going to:
+    a. get item or create a new one if it does not exist from local storage, ie:
+    window.localStorage.getItem("saveHighscore") || []
+    the line above will return a string, so you want to use JSON.parse to get it in json format as following:
+    let highscores = JSON.parse(window.localStorage.getItem("saveHighscore")) || [];
+    b. create a new object with user input and higscore, ie: {userInput: username, highscore: highscore}
+    c. push your object to highscores array
+    d. save your array n local storage, ie: window.localStorage.setItem("saveHighscore", JSON.stringify(highscores)); - remember, it wants to receve a string, so you have to use JSON.stringify method to convert it into string.
+    e. create a new html page to display highscores, grab your saveHighscore array using getItem method and display everything in a nice table :)
+*/
