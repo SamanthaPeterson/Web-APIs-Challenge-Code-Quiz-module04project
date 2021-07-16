@@ -1,22 +1,81 @@
-var timeElement = document.querySelector("#time");
-var wrapperElement = document.querySelector(".wrapper");
-var btnElement = document.querySelector("#start");
+var timeElement = document.querySelector("#time"); // Upper right hand corner of screen counting down time. 
+var wrapperElement = document.querySelector(".wrapper"); //instructions
+var startBtnElement = document.querySelector("#start"); //START QUIZ BUTTON
+
+var btnElement = document.querySelector("#button");
+var divInstructionsElement = document.querySelector(".div-instructions-element");
 var divContainerElement = document.querySelector(".divContainer");
+var divContainerElement = document.querySelector(".divContainer");
+
+var divContainerElement = document.querySelector(".divContainer");
+var codeQuizTitle = document.querySelector("quiz-title");
 var hElement = document.querySelector("#title");
+var addScore = document.querySelector("add-score");
+var viewScore = document.querySelector("view-score");
 var orderedListElement = document.querySelector("#question");
+var viewTimer = document.querySelector("view.timer");
+var timerElement = document.querySelector("timer-element");
 var finishDiv = document.querySelector(".finish-section");
+
 var finalScore = document.querySelector("#result");
+
 var errorMessage = document.querySelector("#errorMessage");
 var initialInput = document.querySelector("#inputInitial").value;
+
 var submitElement = document.querySelector(".btn btn-primary mb-2");
+var initialsEl = document.getElementById("initials");
 var answerDivElement = document.querySelector("#answer");
 var finalPageElement = document.querySelector(".final-page");
-var initialAndScore = document.querySelector("#staticEmail");
+var initialAndScore = document.querySelector("#initial-and-score");
 var startPageElement = document.querySelector(".start-page");
+var choicesElement = document.getElementById("choices");
+var answersElement = document.getElementById("answers");
+var currentQuestionIndex = 0;
+var time = questions.length * 15;
+var timerId;
+var feedbackEl = document.getElementById("feedback");
 
+var returnToStart = document.querySelector("#go-back");  
+var clearScore = document.querySelector("#clear-score");
+var yourScore = document.querySelector("#your-score");
+
+
+var finalScore = document.querySelector("#result"); HighScore
+var finalScore = document.querySelector("#result"); ENTERINITIALS
+var finalScore = document.querySelector("#result"); submitElement
+var finalScore = document.querySelector("#result"); YOURFINALSCORE
+var finalScore = document.querySelector("#result"); ALLDONEBUTTON
+var finalScore = document.querySelector("#result"); SUBMITBUTTON
+
+/*10. your event listener is going to look somethin like this: document.getElementById("submit").addEventListener("click", addHighscore);
+Local storage:
+    here is a very nice guide to it: https: //blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/
+    In you
+function addHighscore you are going to:
+    a.get item or create a new one
+if it does not exist from local storage, ie:
+    window.localStorage.getItem("saveHighscore") || []
+the line above will
+return a string, so you want to use JSON.parse to get it in json format as following:
+    let highscores = JSON.parse(window.localStorage.getItem("saveHighscore")) || [];
+b.create a new object with user input and higscore, ie: {
+    userInput: username,
+    highscore: highscore
+}
+c.push your object to highscores array
+d.save your array n local storage, ie: window.localStorage.setItem("saveHighscore", JSON.stringify(highscores)); - remember, it wants to receve a string, so you have to use JSON.stringify method to convert it into string.
+e.create a new html page to display highscores, grab your saveHighscore array using getItem method and display everything in a nice table: ) 
+
+
+
+On zero game over or all questions answered 
+
+// sound effects
+//ar sfxRight = new Audio("assets/sfx/correct.wav");
+//var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
 // 
-//
+*/
 
 
 
@@ -172,7 +231,79 @@ if (answerText === questions[i].answer) {
     answerDiv.textContent = "Wrong";
     timer = timer - 15;
 }
- */
+ 
+
+User Story
+AS A coding boot camp student
+I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
+SO THAT I can gauge my progress compared to my peers
+
+
+Acceptance Criteria
+GIVEN I am taking a code quiz
+WHEN I click the start button
+THEN a timer starts and I am presented with a question
+
+WHEN I answer a question
+THEN I am presented with another question
+
+WHEN I answer a question incorrectly
+THEN time is subtracted from the clock
+
+WHEN all questions are answered or the timer reaches 0
+THEN the game is over
+
+WHEN the game is over
+THEN I can save my initials and score
+
+Mock - Up
+The following animation demonstrates the application functionality:
+
+    code quiz
+
+Grading Requirements
+This challenge is graded based on the following criteria:
+
+    Technical Acceptance Criteria: 40 %
+    Satisfies all of the above acceptance criteria.
+Deployment: 32 %
+    Application deployed at live URL.
+
+Application loads with no errors.
+
+Application GitHub URL submitted.
+
+GitHub repository that contains application code.
+
+Application Quality: 15 %
+    Application user experience is intuitive and easy to navigate.
+
+Application user interface style is clean and polished.
+
+Application resembles the mock - up functionality provided in the Challenge instructions.
+
+Repository Quality: 13 %
+    Repository has a unique name.
+
+Repository follows best practices
+for file structure and naming conventions.
+
+Repository follows best practices
+for class / id naming conventions, indentation, high - quality comments, etc.
+
+Repository contains multiple descriptive commit messages.
+
+Repository contains a high - quality README file with description, screenshot, and link to deployed application.
+
+How to Submit the Challenge
+You are required to submit BOTH of the following
+for review:
+
+    The URL of the functional, deployed application.
+
+The URL of the GitHub repository.Give the repository a unique name and include a README describing the project.
+
+*/
 
 
 if (i < questions.length - 1) {
@@ -254,24 +385,134 @@ function clearScore() {
 Some pseudocode for you:
 Game over function (create it first) you have to:
 1. assign current seconds value to highscore (don't forget te create a variable for that)
+
+
+String.prototype.toHHMMSS = function () {
+        var sec_num = parseInt(this, 10); // don't forget the second param
+        var hours = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        return hours + ':' + minutes + ':' + seconds;
+
+        alert("5678".toHHMMSS());
+
+        String.prototype.toHHMMSS = function () {
+            var sec_num = parseInt(this, 10); // don't forget the second param
+            var hours = Math.floor(sec_num / 3600);
+            var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+            var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            return hours + ':' + minutes + ':' + seconds;
+        }
+
+        https: //stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss
+
+
+
 2. clear interval
+The clearInterval()
+function in javascript clears the interval which has been set by setInterval()
+function before that.
+setInterval()
+function takes two parameters.First a
+function to be executed and second after how much time( in ms).
+setInterval() executes the passed
+function
+for the given time interval.
+Jul 26, 2019
+
+JavaScript | clearTimeout() & clearInterval() Method...
+https: //www.google.com/search?q=in+javascript+how+do+i+clear+an+interval&rlz=1C5CHFA_enUS956US956&oq=in+javascript+how+do+i+clear+an+interval&aqs=chrome..69i57j33i22i29i30l3.11835j0j7&sourceid=chrome&ie=UTF-8
+
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = t;
+}
+
+function myStopFunction() {
+    clearInterval(myVar);
+}
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = t;
+}
+
+function myStopFunction() {
+    clearInterval(myVar);
+}
+
+
 3. hide game screen
+
+
+< button onclick = "myFunction()" > Click Me < /button>
+
+    <
+    div id = "myDIV" >
+    This is my DIV element. <
+    /div>
+
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+https: //www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+
+
 4. show game over screen (don't forget to create that in your html)
+https: //developer.mozilla.org/en-US/search?q=game+over+screen+
+
+if (y + dy < ballRadius) {
+    dy = -dy;
+} else if (y + dy > canvas.height - ballRadius) {
+    alert("GAME OVER");
+    document.location.reload();
+    clearInterval(interval); // Needed for Chrome to end game
+}
+
+
 5. show right answers and wrong answers values to user
+https: //www.sitepoint.com/community/t/checking-answer-in-a-quiz/325000
+
+
 6. show highscore
+
 7. create an input field where user can insert its name 
+
 8. create a submit button that when its clicked you are going to save the input value in a variable (don't forget to create it first)
+
+
 9. create a new event listener for submit button and a function for adding the highscore to the local storage
-10. your event listener is going to look somethin like this: document.getElementById("submit").addEventListener("click", addHighscore);
-Local storage:
-here is a very nice guide to it: https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/
-In you function addHighscore you are going to:
-    a. get item or create a new one if it does not exist from local storage, ie:
-    window.localStorage.getItem("saveHighscore") || []
-    the line above will return a string, so you want to use JSON.parse to get it in json format as following:
-    let highscores = JSON.parse(window.localStorage.getItem("saveHighscore")) || [];
-    b. create a new object with user input and higscore, ie: {userInput: username, highscore: highscore}
-    c. push your object to highscores array
-    d. save your array n local storage, ie: window.localStorage.setItem("saveHighscore", JSON.stringify(highscores)); - remember, it wants to receve a string, so you have to use JSON.stringify method to convert it into string.
-    e. create a new html page to display highscores, grab your saveHighscore array using getItem method and display everything in a nice table :)
+
+
+
 */
