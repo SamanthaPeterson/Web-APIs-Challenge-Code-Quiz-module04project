@@ -39,13 +39,15 @@ var returnToStart = document.querySelector("#go-back");
 var clearScore = document.querySelector("#clear-score");
 var yourScore = document.querySelector("#your-score");
 
+var highScore = document.querySelector("#high-score");
 
-var finalScore = document.querySelector("#result"); HighScore
-var finalScore = document.querySelector("#result"); ENTERINITIALS
-var finalScore = document.querySelector("#result"); submitElement
-var finalScore = document.querySelector("#result"); YOURFINALSCORE
-var finalScore = document.querySelector("#result"); ALLDONEBUTTON
-var finalScore = document.querySelector("#result"); SUBMITBUTTON
+var result = document.querySelector("#result"); 
+var enterInitials = document.querySelector("#enter-initials");
+var submitElement = document.querySelector("#submit-element");
+
+var yourFinalScore = document.querySelector("#your-final-score"); 
+var allDone = document.querySelector("#all-done-button"); 
+var submitButton = document.querySelector("#submit-button");
 
 /*10. your event listener is going to look somethin like this: document.getElementById("submit").addEventListener("click", addHighscore);
 Local storage:
